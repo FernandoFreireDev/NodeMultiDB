@@ -19,9 +19,9 @@ describe('Postgres Strategy', function() {
         assert.equal(result, true)
     })
 
-    it('Cadastrar', async () => {
-        const result = await context.create(HEROI_CADASTRAR)
-        assert.deepEqual(result, HEROI_CADASTRAR)
-    })
+    // it('Cadastrar', async () => {
+    //     const result = await context.create(HEROI_CADASTRAR)
+    //     assert.deepEqual(result, HEROI_CADASTRAR)
+    // })
  
 })
