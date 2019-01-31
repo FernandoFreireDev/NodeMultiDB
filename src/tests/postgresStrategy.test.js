@@ -8,20 +8,21 @@ const HEROI_CADASTRAR = {
     poder: 'Flexas'
 }
 
-describe('Postgres Strategy', function() {
+describe('Postgres Strategy', function () {
     this.timeout(Infinity)
-    this.beforeAll(async () =>{
+    this.beforeAll(async function () {
         await context.connect()
     })
 
-    it('PostgreSQL Connection', async function(){
+    it('PostgreSQL Connection', async function () {
         const result = await context.isConnected()
         assert.equal(result, true)
     })
 
-    // it('Cadastrar', async () => {
-    //     const result = await context.create(HEROI_CADASTRAR)
-    //     assert.deepEqual(result, HEROI_CADASTRAR)
-    // })
- 
+    it('Cadastrar', async function () {
+        const result = await context.create(HEROI_CADASTRAR)
+        delete result.id
+        assert.deepEqual(result, HEROI_CADASTRAR)
+    })
+
 })
