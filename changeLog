@@ -1,8 +1,16 @@
 # ChangeLog
 
+## [0.3] - Fernando Freire - 2019-01-31
+
+- Adicionado listagem, atualização e remoção por id nos testes.
+
+- Implementado na estratégia os metodos de listagem, atualização e remoção por id (respectivamente: read, update, delete).
+
+
+
 ## [0.2] - Fernando Freire - 2019-01-31
 
-- Comentado o teste de cadastro pois estava dando erro.
+- Correção do bug de teste de cadastro.
 
 
 
