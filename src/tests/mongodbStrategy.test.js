@@ -1,8 +1,9 @@
 const assert = require("assert");
-const Mongodb = require("./../db/strategies/mongodb");
+const Mongodb = require("./../db/strategies/mongodb/mongodb");
 const Context = require("./../db/strategies/base/contextStrategy");
+const HeroiSchema = require('./../db/strategies/mongodb/schemas/herois');
 
-const context = new Context(new Mongodb());
+let context = {};
 
 const HEROI_CADASTRAR = {
     nome: 'Mulher Maravilha',
@@ -24,7 +25,9 @@ let HEROI_ID = '';
 describe("MongoDB Suíte de testes", function () {
 
     this.beforeAll(async () => {
-        await context.connect();
+        const connection = Mongodb.connect();
+        context = new Context(new Mongodb(connection, HeroiSchema));
+
         await context.create(HEROI_DEFAULT);
         const result = await context.create(HEROI_ATUALIZAR);
         HEROI_ID = result._id;
