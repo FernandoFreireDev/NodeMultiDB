@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [0.7] - Fernando Freire - 2019-02-02
+
+- Implementando hapi.js para começar a montar a estrutura da api
+
+
+
 ## [0.6] - Fernando Freire - 2019-02-02
 
 - Refatorando os modos de conexão com o MongoDB e com o PostgreSQL.
