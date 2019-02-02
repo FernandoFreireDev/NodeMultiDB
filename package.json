@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "mocha": "^5.2.0",
+    "mongoose": "^5.4.9",
     "pg": "^7.8.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.42.0"

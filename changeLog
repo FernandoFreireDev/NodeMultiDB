@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [0.5] - Fernando Freire - 2019-02-02
+
+- Implementado a estrategia e teste de CRUD do mongodb.
+
+
+
 ## [0.4] - Fernando Freire - 2019-02-01
 
 - Scripts do mongodb
