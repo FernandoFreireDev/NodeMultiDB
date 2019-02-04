@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [0.8] - Fernando Freire - 2019-02-04
+
+- Adicionado busca na API
+
+
+
 ## [0.7] - Fernando Freire - 2019-02-02
 
 - Implementando hapi.js para começar a montar a estrutura da api
