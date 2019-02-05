@@ -3,7 +3,7 @@ const api = require('./../api');
 
 let app = {};
 
-describe.only('Suite de testes da API Herois', function(){
+describe('Suite de testes da API Herois', function () {
 
     this.beforeAll(async () => {
         app = await api;
@@ -47,7 +47,18 @@ describe.only('Suite de testes da API Herois', function(){
             url: `/herois?skip=0&limit=${TAMANHO_LIMITE}`
         });
 
-        assert.deepEqual(result.payload, 'Erro interno no servidor');
+        const erroResult = {
+            "statusCode": 400,
+            "error": "Bad Request",
+            "message": "child \"limit\" fails because [\"limit\" must be a number]",
+            "validation": {
+                "source": "query",
+                "keys": ["limit"]
+            }
+        }
+
+        assert.deepEqual(result.statusCode, 400);
+        assert.deepEqual(result.payload, JSON.stringify(erroResult));
     });
 
     it('Listar /herois - deve filtrar um item', async () => {

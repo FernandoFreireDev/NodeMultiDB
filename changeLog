@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [0.9] - Fernando Freire - 2019-02-05
+
+- Adicionado validação na rota com JOI
+
+
+
 ## [0.8] - Fernando Freire - 2019-02-04
 
 - Adicionado busca na API
