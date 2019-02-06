@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [1.0] - Fernando Freire - 2019-02-05
+
+- Adicionado testes e rotas para cadastro e edição parcial
+
+
+
 ## [0.9] - Fernando Freire - 2019-02-05
 
 - Adicionado validação na rota com JOI
