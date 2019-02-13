@@ -83,7 +83,7 @@ describe('Suite de testes da API Herois', function () {
 
     it('Listar /herois - deve filtrar um item', async () => {
         const TAMANHO_LIMITE = 1000;
-        const NAME = "Batman";
+        const NAME = DEFAULT_ATUALIZAR.nome;
         const result = await app.inject({
             method: 'GET',
             url: `/herois?skip=0&limit=${TAMANHO_LIMITE}&nome=${NAME}`

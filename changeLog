@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [1.2] - Fernando Freire - 2019-02-13
+
+- Adicionado Swagger para documentar API.
+
+
+
 ## [1.1] - Fernando Freire - 2019-02-06
 
 - Adicionado testes e rotas para remoção.
