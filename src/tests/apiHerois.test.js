@@ -3,6 +3,12 @@ const api = require('./../api');
 
 let app = {};
 
+const TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ilh1eGFkYXNpbHZhIiwiaWQiOjEsImlhdCI6MTU1MDU5NTAyNX0.HqYDLWk8ZL_ESn7guYu7S7NUP3jJVf-yCt_JNLqmWo0';
+
+
+const headers = {
+    Authorization: TOKEN
+}
 const DEFAULT_CADASTRAR = {
     nome: 'Chapolin Colorado',
     poder: 'Marreta Biônica'
@@ -22,6 +28,7 @@ describe('Suite de testes da API Herois', function () {
         const result = await app.inject({
             method: 'POST',
             url: '/herois',
+            headers,
             payload: JSON.stringify(DEFAULT_ATUALIZAR)
         });
 
@@ -33,7 +40,8 @@ describe('Suite de testes da API Herois', function () {
 
         const result = await app.inject({
             method: 'GET',
-            url: '/herois?skip=0&limit=10'
+            url: '/herois?skip=0&limit=10',
+            headers
         });
 
         const dados = JSON.parse(result.payload);
@@ -49,7 +57,8 @@ describe('Suite de testes da API Herois', function () {
 
         const result = await app.inject({
             method: 'GET',
-            url: `/herois?skip=0&limit=${TAMANHO_LIMITE}`
+            url: `/herois?skip=0&limit=${TAMANHO_LIMITE}`,
+            headers
         });
 
         const dados = JSON.parse(result.payload);
@@ -64,7 +73,8 @@ describe('Suite de testes da API Herois', function () {
 
         const result = await app.inject({
             method: 'GET',
-            url: `/herois?skip=0&limit=${TAMANHO_LIMITE}`
+            url: `/herois?skip=0&limit=${TAMANHO_LIMITE}`,
+            headers
         });
 
         const erroResult = {
@@ -86,7 +96,8 @@ describe('Suite de testes da API Herois', function () {
         const NAME = DEFAULT_ATUALIZAR.nome;
         const result = await app.inject({
             method: 'GET',
-            url: `/herois?skip=0&limit=${TAMANHO_LIMITE}&nome=${NAME}`
+            url: `/herois?skip=0&limit=${TAMANHO_LIMITE}&nome=${NAME}`,
+            headers
         });
 
         const dados = JSON.parse(result.payload);
@@ -100,6 +111,7 @@ describe('Suite de testes da API Herois', function () {
         const result = await app.inject({
             method: 'POST',
             url: `/herois`,
+            headers,
             payload: JSON.stringify(DEFAULT_CADASTRAR)
         });
 
@@ -123,6 +135,7 @@ describe('Suite de testes da API Herois', function () {
         const result = await app.inject({
             method: 'PATCH',
             url: `/herois/${_id}`,
+            headers,
             payload: JSON.stringify(expected)
         });
 
@@ -139,6 +152,7 @@ describe('Suite de testes da API Herois', function () {
         const result = await app.inject({
             method: 'PATCH',
             url: `/herois/${_id}`,
+            headers,
             payload: JSON.stringify({
                 poder: 'Arco e Flecha'
             })
@@ -160,7 +174,8 @@ describe('Suite de testes da API Herois', function () {
         const _id = DEFAULT_ID;
         const result = await app.inject({
             method: 'DELETE',
-            url: `/herois/${_id}`
+            url: `/herois/${_id}`,
+            headers
         });
         const statusCode = result.statusCode;
         const dados = JSON.parse(result.payload);
@@ -173,7 +188,8 @@ describe('Suite de testes da API Herois', function () {
         const _id = `5c5a2172b68c0216ec79e5f6`; 
         const result = await app.inject({
             method: 'DELETE',
-            url: `/herois/${_id}`
+            url: `/herois/${_id}`,
+            headers
         });
         const statusCode = result.statusCode;
         const dados = JSON.parse(result.payload);
@@ -191,7 +207,8 @@ describe('Suite de testes da API Herois', function () {
         const _id = `ID_INVÁLIDO`; 
         const result = await app.inject({
             method: 'DELETE',
-            url: `/herois/${_id}`
+            url: `/herois/${_id}`,
+            headers
         });
         const statusCode = result.statusCode;
         const dados = JSON.parse(result.payload);

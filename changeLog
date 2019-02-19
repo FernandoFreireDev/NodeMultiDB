@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [1.3] - Fernando Freire - 2019-02-19
+
+- Adicionado JWT para autenticação.
+
+
+
 ## [1.2] - Fernando Freire - 2019-02-13
 
 - Adicionado Swagger para documentar API.
