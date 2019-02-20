@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [1.4] - Fernando Freire - 2019-02-20
+
+- Adicionado Helper para verificação de senha.
+
+
+
 ## [1.3] - Fernando Freire - 2019-02-19
 
 - Adicionado JWT para autenticação.
