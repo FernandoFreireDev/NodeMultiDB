@@ -26,14 +26,16 @@ class Postgres extends ICrud {
         await model.sync();
         return model;
     }
-
+    
     static async connect() {
-        const connection = new Sequelize("heroes", "fernandofreire", "system", {
-            host: "192.168.99.100",
-            dialect: "postgres",
+        const connection = new Sequelize(`${process.env.POSTGRES_URL}`, {
             quoteIdentifiers: false,
             operatorsAliases: false,
-            logging: false
+            logging: false,
+            ssl: process.env.SSL_DB,
+            dialectOptions: {
+                ssl: process.env.SSL_DB
+            }
         });
         return connection;
     }

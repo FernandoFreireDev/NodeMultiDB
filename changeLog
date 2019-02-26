@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [1.6] - Fernando Freire - 2019-02-26
+
+- Adicionado arquivos de configuração de ambiente.
+
+
+
 ## [1.5] - Fernando Freire - 2019-02-25
 
 - Adicionado autenticação com JWT.
