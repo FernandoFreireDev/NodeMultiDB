@@ -9,7 +9,7 @@ const configPath = join(__dirname, './config', `.env.${env}`);
 config({
     path: configPath
 })
-
+console.log(process.env.MONGODB_URL)
 const Hapi = require('hapi');
 const Context = require('./db/strategies/base/contextStrategy');
 const MongoDB = require('./db/strategies/mongodb/mongodb');
